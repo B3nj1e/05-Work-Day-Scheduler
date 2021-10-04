@@ -47,15 +47,13 @@ y = ['9text', '10text', '11text']
 saveBtn.on('click', function(event) {
     event.preventDefault();
 
-    for (i = 0; i < x.length; i++) {
+    for (i = 0; i < y.length; i++) {
     var task = $('#'.concat(y[i]));
     var taskContent = $('#'.concat(y[i])).val();
     console.log(taskContent);
     if (taskContent) {
     localStorage.setItem("taskContent", JSON.stringify(taskContent));
     // renderTask()
-    }}
-
     var savedTask = JSON.parse(localStorage.getItem("taskContent"));
     console.log(savedTask);
     if (savedTask !== null) {
@@ -65,6 +63,18 @@ saveBtn.on('click', function(event) {
         task.append(savedEl);
         // $('#'.concat(y[i])).val().push(savedTask);
     }
+
+    }};
+
+    // var savedTask = JSON.parse(localStorage.getItem("taskContent"));
+    // console.log(savedTask);
+    // if (savedTask !== null) {
+    //     // var y[i]El = $('#'.contact(y[i]))
+    //     var savedEl = $('<p>')
+    //     savedEl.text(savedTask)
+    //     task.append(savedEl);
+    //     // $('#'.concat(y[i])).val().push(savedTask);
+    // }
 });
 
 // // function renderTask() {
