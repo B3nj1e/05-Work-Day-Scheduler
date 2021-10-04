@@ -43,12 +43,13 @@ timeCheck();
 //     localStorage.setItem("taskContent", JSON.stringify(taskContent));
 // }
 y = ['9text', '10text', '11text']
+x = ['9write', '10write', '11write']
 
 saveBtn.on('click', function(event) {
     event.preventDefault();
 
     for (i = 0; i < y.length; i++) {
-    var task = $('#'.concat(y[i]));
+    var task = $('#'.concat(x[i]));
     var taskContent = $('#'.concat(y[i])).val();
     console.log(taskContent);
     if (taskContent) {
@@ -58,9 +59,9 @@ saveBtn.on('click', function(event) {
     console.log(savedTask);
     if (savedTask !== null) {
         // var y[i]El = $('#'.contact(y[i]))
-        var savedEl = $('<p>')
-        savedEl.text(savedTask)
-        task.append(savedEl);
+        // var savedEl = $('<p>')
+        task.append("<p>" + savedTask + "</p>");
+        // task.append(savedEl);
         // $('#'.concat(y[i])).val().push(savedTask);
     }
 
