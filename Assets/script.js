@@ -20,16 +20,24 @@ console.log(currentTime.format("hh:mm:ss"))
 
 // checking current time to task time, then adjusting class to alter CSS
 function timeCheck() {
-    x = ["9:00:00", "10:00:00", "11:00:00", "12:00:00", "13:00:00", "14:00:00", "15:00:00", "16:00:00", "17:00:00"]
+    x = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
     console.log(x);
     for (i = 0; i < 9; i++) {
     console.log(x[i]);
     console.log("#".concat(x[i]));
-    var past = moment(x[i], "hh:mm:ss").isBefore(currentTime.format("hh:mm:ss"), "hh:mm:ss");
+    console.log(currentTime.format("h"));
+    console.log(moment(x[i])._i);
+    var past = moment(x[i]).isBefore(currentTime.format("h"));
+    var present = moment(x[i]).isSame(currentTime.format("h"));
     if (past) {
-        $("#".concat(x[i])).addClass('past');
+        var target = $("#".concat(x[i]))
+        target.addClass('past');
+    } else if (present) {
+        var target = $("#".concat(x[i]))
+        target.addClass('present');
     } else {
-        $("#".concat(x[i])).addClass('future');
+        var target = $("#".concat(x[i]))
+        target.addClass('future');
     }
 }}
 
@@ -44,6 +52,7 @@ timeCheck();
 // }
 y = ['9text', '10text', '11text']
 x = ['9write', '10write', '11write']
+z = ['9save', '10save', '11save']
 
 saveBtn.on('click', function(event) {
     event.preventDefault();
