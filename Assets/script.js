@@ -6,7 +6,7 @@ saveBtn = $('.saveBtn');
 function update() {
     var nowTime = moment();
     var currentDay = $('#currentDay');
-    currentDay.text(nowTime.format("dddd, MMMM Do YYYY, HH:mm:ss a"));
+    currentDay.text(nowTime.format("dddd, MMMM Do YYYY, H:mm:ss a"));
 };
 
 // refreshing and rewriting time every 1000ms/1sec
@@ -16,19 +16,21 @@ $(document).ready(function() {
 });
 
 var currentTime = moment();
-console.log(currentTime.format("HH:mm:ss"))
+console.log(currentTime.format("H:mm:ss"))
 
 // checking current time to task time, then adjusting class to alter CSS
 function timeCheck() {
-    x = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+    x = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
     console.log(x);
     for (i = 0; i < x.length; i++) {
     console.log(x[i]);
-    console.log("#".concat(x[i]));
-    console.log(currentTime.format("HH"));
-    console.log(moment(x[i])._i);
-    var past = moment(x[i]).isBefore(currentTime.format("HH"));
-    var present = moment(x[i]).isSame(currentTime.format("HH"));
+    // console.log("#".concat(x[i]));
+    console.log(currentTime.format('H'));
+    // console.log(moment(x[i])._i);
+    var past = x[i] < currentTime.format('H');
+    console.log(past);
+    var present = x[i] === currentTime.format('H');
+    console.log(present);
     if (past) {
         var target = $("#".concat(x[i]))
         target.addClass('past');
