@@ -66,12 +66,10 @@ saveBtn.on('click', function(event) {
     console.log('#'.concat($(event.target).parent().parent()[0].id).concat('text'));
 
     saveTask();
+    renderTask();
 });
 
 // setting ID of save button, obtain text associated with save button, saving to local storage
-
-
-
 function saveTask() {
     var taskId = $(event.target).parent().parent()[0].id;
     var taskIdHash = $('#'.concat(taskId).concat('text'));
@@ -83,13 +81,14 @@ function saveTask() {
         localStorage.setItem(taskId, JSON.stringify(taskContent));
 }};
 
+// function runs through all of the time periods, if there is a key value pair in local storage, it then writes it the innerHTML of the input variable
 function renderTask() {
     for (i = 0; i < a.length; i++) {
     var savedTask = JSON.parse(localStorage.getItem(a[i]));
     console.log(savedTask);
     var writeLocation = $('#'.concat(a[i]).concat('text'));
     console.log(writeLocation);
-    writeLocation.append('<p>' + savedTask + '</p>');
+    writeLocation[0].innerHTML = savedTask;
     }
 };
 
