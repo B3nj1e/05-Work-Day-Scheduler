@@ -55,11 +55,11 @@ timeCheck();
 y = ['#9text', '#10text', '#11text']
 x = ['#9write', '#10write', '#11write']
 z = ['#9save', '#10save', '#11save']
-a = ['#9', '#10', '#11', '9', '9', '9', '9', '9']
+a = ['09', '10', '11', '12', '13', '14', '15', '16', '17']
 
 saveBtn.on('click', function(event) {
     event.preventDefault();
-    // working out the DOM transvere 
+    // working out the DOM transverse 
     console.log(event);
     console.log(event.data);
     console.log($(event.target).parent().parent().children());
@@ -69,17 +69,41 @@ saveBtn.on('click', function(event) {
 });
 
 // setting ID of save button, obtain text associated with save button, saving to local storage
+
+
+
 function saveTask() {
     var taskId = $(event.target).parent().parent()[0].id;
     var taskIdHash = $('#'.concat(taskId).concat('text'));
     var taskContent = taskIdHash.val();
     console.log(taskContent);
     console.log(taskId);
+    console.log(jQuery.type(taskId));
     if (taskContent !== null) {
         localStorage.setItem(taskId, JSON.stringify(taskContent));
-    }};
+}};
 
+function renderTask() {
+    for (i = 0; i < a.length; i++) {
+    var savedTask = JSON.parse(localStorage.getItem(a[i]));
+    console.log(savedTask);
+    var writeLocation = $('#'.concat(a[i]).concat('text'));
+    console.log(writeLocation);
+    writeLocation.append('<p>' + savedTask + '</p>');
+    }
+};
 
+renderTask();
+
+    // for (i = 0; i < a.length; i++) {
+    
+    // if (taskId == a && saveTask !== null) {
+    // console.log(taskId);
+    // console.log(taskIdHash);
+    // taskIdHash.append('<p>' + savedTask + '<p>');
+    // }
+
+    // }
 
     // for (i = 0; i < y.length; i++) {
     // var task = $(x[i]);
@@ -120,7 +144,6 @@ function saveTask() {
     //     // $('#'.concat(y[i])).val().push(savedTask);
     // }
 
-console.log($('#10').val());
 
 // // function renderTask() {
 // //     var savedTask = JSON.parse(localStorage.getItem("taskContent"));
