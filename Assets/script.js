@@ -55,22 +55,32 @@ timeCheck();
 y = ['#9text', '#10text', '#11text']
 x = ['#9write', '#10write', '#11write']
 z = ['#9save', '#10save', '#11save']
+a = ['#9', '#10', '#11', '9', '9', '9', '9', '9']
 
 saveBtn.on('click', function(event) {
     event.preventDefault();
+    // working out the DOM transvere 
     console.log(event);
+    console.log(event.data);
+    console.log($(event.target).parent().parent().children());
+    console.log('#'.concat($(event.target).parent().parent()[0].id).concat('text'));
 
-    for (i = 0; i < y.length; i++) {
-    var taskId = event.target.id;
-    var taskContent = $(y[i]).val();
+    saveTask();
+});
+
+// setting ID of save button, obtain text associated with save button, saving to local storage
+function saveTask() {
+    var taskId = $(event.target).parent().parent()[0].id;
+    var taskIdHash = $('#'.concat(taskId).concat('text'));
+    var taskContent = taskIdHash.val();
     console.log(taskContent);
     console.log(taskId);
     if (taskContent !== null) {
         localStorage.setItem(taskId, JSON.stringify(taskContent));
-    } else {
-        return;
-    }
-    };
+    }};
+
+
+
     // for (i = 0; i < y.length; i++) {
     // var task = $(x[i]);
     // var taskContent = $(y[i]).val();
@@ -109,7 +119,8 @@ saveBtn.on('click', function(event) {
     //     task.append(savedEl);
     //     // $('#'.concat(y[i])).val().push(savedTask);
     // }
-});
+
+console.log($('#10').val());
 
 // // function renderTask() {
 // //     var savedTask = JSON.parse(localStorage.getItem("taskContent"));
