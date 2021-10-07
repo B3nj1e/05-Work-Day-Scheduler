@@ -27,9 +27,9 @@ function timeCheck() {
     // console.log("#".concat(x[i]));
     console.log(currentTime.format('H'));
     // console.log(moment(x[i])._i);
-    var past = x[i] < currentTime.format('H');
+    var past = moment(x[i]).isBefore(currentTime.format('H'));
     console.log(past);
-    var present = x[i] === currentTime.format('H');
+    var present = moment(x[i]).isSame(currentTime.format('H'));
     console.log(present);
     if (past) {
         var target = $("#".concat(x[i]))
