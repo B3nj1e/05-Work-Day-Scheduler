@@ -29,12 +29,14 @@ function timeCheck() {
     // console.log(moment(x[i])._i);
     var past = moment(x[i]).isBefore(currentTime.format('H'));
     console.log(past);
+    var past2 = x[i] < currentTime.format('H');
     var present = moment(x[i]).isSame(currentTime.format('H'));
+    var present2 = x[i] == currentTime.format('H');
     console.log(present);
-    if (past) {
+    if (past || past2) {
         var target = $("#".concat(x[i]))
         target.addClass('past');
-    } else if (present) {
+    } else if (present || present2) {
         var target = $("#".concat(x[i]))
         target.addClass('present');
     } else {
