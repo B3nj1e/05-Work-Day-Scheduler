@@ -47,9 +47,6 @@ function timeCheck() {
 
 timeCheck();
 
-y = ['#9text', '#10text', '#11text']
-x = ['#9write', '#10write', '#11write']
-z = ['#9save', '#10save', '#11save']
 a = ['09', '10', '11', '12', '13', '14', '15', '16', '17']
 
 saveBtn.on('click', function(event) {

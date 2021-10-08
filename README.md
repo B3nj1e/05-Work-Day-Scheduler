@@ -1,69 +1,42 @@
 # 05 Homework - Work Day Scheduler
 
-## Start page
+## Current time and blank schedule
 
-![Quiz home page](./Assets/images/picture1.png)
+![Time and blank schedule](./Assets/images/picture1.png)
 ```
-The start card is displayed, and all other none relevent cards are hidden. 
-Timer top right corner
-Highscore hyperkink top left corner
-Start button centrally
+At the top: current date and time, updating at 1 second intervals
+Work schedule from 9am-5pm broken into hourly intervals
+Color coded hourly intervals based on current time. Grey = past, red = present, green = future. 
 ```
 
-## Q&A 1
+## Task entered
 
-![First quiz question](./Assets/images/picture2.png)
+![task entered into textarea](./Assets/images/picture2.png)
 ```
-Upon clicking the start button, the start card is hidden
-quiz question card displayed
-Question text is non-interactive
-Answers are buttons, to submit an answer the button is clicked
-timer starts at 30 seconds, minus 1 per second
+Upon clicking the task box, a textarea box appears, a task has been written in 9am as an example
 
 ```
 
-## Q&A 2
+## Save task
 
-![second quiz question](./Assets/images/picture3.png)
+![saving task in text area to local storage](./Assets/images/picture3.png)
 ```
-Upon clicking the answer button on the previous slide:
--the text content in automatically replaced from Q1 to Q2
--result from the previous question is displayed at the bottom; correct/incorrect. Incorrect answer
--if the previous answer was incorrect -10 off the timer
-
-```
-
-## Q&A 3
-
-![third quiz question](./Assets/images/picture4.png)
-```
-Upon clicking the answer button on the previous slide:
--the text content in automatically replaced from Q1 to Q2
--result from the previous question is displayed at the bottom; last one was correct
+Upon clicking the save button:
+-the textarea content is saved to local storage
+-the local storage key value pair is then parse from local storage into the text area. This is done at each save button event click, and also every time the page loads 
 
 ```
 
-## Finish page, submit score
+## Local storage render and page refresh
 
-![finish page, prompt to submit score](./Assets/images/picture5.png)
+![Local storage render and page refresh](./Assets/images/picture4.png)
 ```
-Once the timer is <= 0, the finish card is displayed and all other card hidden
-Presented with total score tally
-Presented with form to submit initial for recording
-
-```
-
-## High scores page
-
-![high scores](./Assets/images/picture6.png)
-![high scores](./Assets/images/picture7.png)
-```
-Once the submit button is clicked for the initials, it is set to the local storage, then render from the local storage to the high scores tally
-Clear button removes high scores
-Go back button returns to main index.html/start page
+As an example, various tasks have been entered:
+-each task is individually saved in local storage in a key value pair
+-with each save button event click and each page refresh, the local storage data is parse into the task textarea
 
 ```
 
 
 
-To access github repository please click [here](https://github.com/B3nj1e/04-Homework-Quiz-Game). To access webpage please click [here](https://b3nj1e.github.io/04-Homework-Quiz-Game/). 
+To access github repository please click [here](https://github.com/B3nj1e/05-Work-Day-Scheduler). To access webpage please click [here](https://b3nj1e.github.io/05-Work-Day-Scheduler/). 
