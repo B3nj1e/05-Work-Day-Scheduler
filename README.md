@@ -2,7 +2,7 @@
 
 ## Current time and blank schedule
 
-![Time and blank schedule](./Assets/images/picture1.png)
+![Time and blank schedule](./assets/images/picture1.png)
 ```
 At the top: current date and time, updating at 1 second intervals
 Work schedule from 9am-5pm broken into hourly intervals
@@ -11,7 +11,7 @@ Color coded hourly intervals based on current time. Grey = past, red = present, 
 
 ## Task entered
 
-![task entered into textarea](./Assets/images/picture2.png)
+![task entered into textarea](./assets/images/picture2.png)
 ```
 Upon clicking the task box, a textarea box appears, a task has been written in 9am as an example
 
@@ -19,7 +19,7 @@ Upon clicking the task box, a textarea box appears, a task has been written in 9
 
 ## Save task
 
-![saving task in text area to local storage](./Assets/images/picture3.png)
+![saving task in text area to local storage](./assets/images/picture3.png)
 ```
 Upon clicking the save button:
 -the textarea content is saved to local storage
@@ -29,7 +29,7 @@ Upon clicking the save button:
 
 ## Local storage render and page refresh
 
-![Local storage render and page refresh](./Assets/images/picture4.png)
+![Local storage render and page refresh](./assets/images/picture4.png)
 ```
 As an example, various tasks have been entered:
 -each task is individually saved in local storage in a key value pair
